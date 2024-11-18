@@ -39,7 +39,7 @@ class style:
 
 # reading the email from specified file
 # we can make this a command line argument later
-with open('example_added.txt', 'r') as file:
+with open('example_added.txt', 'r', encoding='utf-8') as file:
     content = file.read()
     # print(content) # for Debugging
 
