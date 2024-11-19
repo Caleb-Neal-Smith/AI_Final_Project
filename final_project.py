@@ -306,7 +306,7 @@ def toneColorEmoji(emotions):
     #
     # emotions = response.json()
 
-    finalSentence = ' '
+    finalSentence = ''
 
     # iterating through the response list
     # + emotions['results'][k][0][2] # For copying and pasting
@@ -318,140 +318,144 @@ def toneColorEmoji(emotions):
         # and changing output color appropriately
         if emotions['results'][k][0][1] == "angry":
             # print(style.RED + str(contentList[j]) + "\033[0m") # May not need this
-            sentenceTogether = style.RED + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.RED + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "admiring":
             # print(style.DARKYELLOW + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKYELLOW + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.DARKYELLOW + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "curious":
             # print(style.CYAN + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.CYAN + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.CYAN + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "confused":
             # print(style.GREEN + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.GREEN + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.GREEN + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         # TEMP BLOW to add more # Take out this comment?
         elif emotions['results'][k][0][1] == "joyful":
             # print(style.YELLOW + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.YELLOW + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.YELLOW + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "loving":
             # print(style.PINK + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.PINK + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.PINK + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "excited":
             # print(style.ORANGE + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.ORANGE + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.ORANGE + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "fearful":
             # print(style.DARKPURPLE + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKPURPLE + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.DARKPURPLE + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "worried":
             # print(style.DARKGREY + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "embarrassed":
             # print(style.MAGENTA + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "sympathetic":
             # print(style.LIGHTRED + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTRED + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.LIGHTRED + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "annoyed":
             # print(style.DARKRED + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKRED + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.DARKRED + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "approving":
             # print(style.MAGENTA + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "aware":
             # print(style.LIGHTGREY_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTGREY_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.LIGHTGREY_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "confident":
             # print(style.LIGHTVIOLET_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "eager":
             # print(style.ORANGE_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.ORANGE_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.ORANGE_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "disappointed":
             # print(style.LIGHTGREY + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTGREY + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.LIGHTGREY + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "disapproving":
             # print(style.DARKGREY + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "grateful":
             # print(style.YELLOW_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.YELLOW_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.YELLOW_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "mournful":
             # print(style.DARKGREY_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREY_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.DARKGREY_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "optimistic":
             # print(style.GREEN_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.GREEN_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.GREEN_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "relieved":
             # print(style.CYAN_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.CYAN_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.CYAN_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "remorseful":
             # print(style.BLUE_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.BLUE_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.BLUE_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "repulsed":
             # print(style.DARKGREEN + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREEN + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.DARKGREEN + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "sad":
             # print(style.BLUE + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.BLUE + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.BLUE + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "surprised":
             # print(style.LIGHTVIOLET_BG + style.RED + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m" + str(emotions['results'][k][0][2])
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         # ^^^^^^^^^ ADD MORE ^^^^^^^^^ # Should we add the two missing tones?
 
         # j = j + 1  # iterating # may not need this
 
-        return finalSentence
+    """
+    The toneColorEmoji() function wasn't working because I accidentally put the return statement
+    inside of the "for in range" loop
+    """
+    return finalSentence
 
 def getSynonyms():
     url = 'https://api.sapling.ai/api/v1/thesaurus'
