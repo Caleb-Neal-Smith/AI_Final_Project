@@ -33,35 +33,96 @@ key = "QD3LVJOE28KMD9E6C820ET3GAUDUOCSC"
 #     ADMIRING = (148, 0, 211)       # Soft Violet (RGB for Violet)
 #     YELLOW = (255, 255, 0)  # Yellow RGB
 
+# class RGBStyle:
+#     ADMIRING = (255, 128, 255)      # Bright Violet
+#     AMUSED = (255, 215, 64)         # Bright Golden Yellow
+#     ANGRY = (255, 64, 64)           # Bright Red
+#     ANNOYED = (255, 128, 80)        # Bright Orange-Red
+#     APPROVING = (128, 255, 128)     # Bright Lime Green
+#     AWARE = (255, 255, 128)         # Bright Lemon Yellow
+#     CONFIDENT = (64, 128, 255)      # Bright Royal Blue
+#     CONFUSED = (192, 128, 255)      # Bright Lavender
+#     CURIOUS = (128, 200, 255)       # Bright Sky Blue
+#     EAGER = (255, 159, 64)          # Bright Pumpkin Orange
+#     DISAPPOINTED = (160, 160, 192)  # Bright Slate Gray
+#     DISAPPROVING = (192, 128, 64)   # Bright Warm Brown
+#     EMBARRASSED = (255, 128, 160)   # Bright Blush Pink
+#     EXCITED = (255, 96, 64)         # Bright Flame Red
+#     FEARFUL = (160, 80, 40)         # Bright Chestnut Brown
+#     GRATEFUL = (128, 255, 192)      # Bright Mint Green
+#     JOYFUL = (255, 255, 64)         # Bright Sunshine Yellow
+#     LOVING = (255, 128, 192)        # Bright Rose Pink
+#     MOURNFUL = (96, 128, 160)       # Bright Steel Blue
+#     NEUTRAL = (192, 192, 192)       # Bright Silver Gray
+#     OPTIMISTIC = (255, 223, 64)     # Bright Goldenrod
+#     RELIEVED = (128, 255, 255)      # Bright Aqua Blue
+#     REMORSEFUL = (192, 96, 64)      # Bright Russet
+#     REPULSED = (160, 255, 160)      # Bright Soft Green
+#     SAD = (96, 160, 255)            # Bright Cerulean Blue
+#     WORRIED = (160, 160, 160)       # Bright Neutral Gray
+#     SURPRISED = (255, 192, 64)      # Bright Marigold
+#     SYMPATHETIC = (255, 128, 128)   # Bright Coral
+
+# class RGBStyle:
+#     ADMIRING = (255, 182, 193)      # Light Pink
+#     AMUSED = (255, 215, 0)          # Gold
+#     ANGRY = (255, 0, 0)             # Red
+#     ANNOYED = (255, 107, 107)       # Coral Red
+#     APPROVING = (144, 238, 144)     # Light Green
+#     AWARE = (230, 230, 250)         # Lavender
+#     CONFIDENT = (65, 105, 225)      # Royal Blue
+#     CONFUSED = (221, 160, 221)      # Plum
+#     CURIOUS = (255, 165, 0)         # Orange
+#     EAGER = (255, 228, 181)         # Moccasin
+#     DISAPPOINTED = (119, 136, 153)   # Light Slate Gray
+#     DISAPPROVING = (139, 0, 0)      # Dark Red
+#     EMBARRASSED = (255, 182, 193)    # Light Pink
+#     EXCITED = (255, 105, 180)       # Hot Pink
+#     FEARFUL = (128, 0, 0)           # Maroon
+#     GRATEFUL = (152, 251, 152)      # Pale Green
+#     JOYFUL = (255, 255, 0)          # Yellow
+#     LOVING = (255, 105, 180)        # Hot Pink
+#     MOURNFUL = (72, 61, 139)        # Dark Slate Blue
+#     NEUTRAL = (128, 128, 128)       # Gray
+#     OPTIMISTIC = (135, 206, 235)    # Sky Blue
+#     RELIEVED = (176, 224, 230)      # Powder Blue
+#     REMORSEFUL = (105, 105, 105)    # Dim Gray
+#     REPULSED = (85, 107, 47)        # Dark Olive Green
+#     SAD = (70, 130, 180)            # Steel Blue
+#     WORRIED = (147, 112, 219)       # Medium Purple
+#     SURPRISED = (0, 255, 255)       # Cyan
+#     SYMPATHETIC = (222, 184, 135)   # Burlywood
+
 class RGBStyle:
-    ADMIRING = (255, 128, 255)      # Bright Violet
-    AMUSED = (255, 215, 64)         # Bright Golden Yellow
-    ANGRY = (255, 64, 64)           # Bright Red
-    ANNOYED = (255, 128, 80)        # Bright Orange-Red
-    APPROVING = (128, 255, 128)     # Bright Lime Green
-    AWARE = (255, 255, 128)         # Bright Lemon Yellow
-    CONFIDENT = (64, 128, 255)      # Bright Royal Blue
-    CONFUSED = (192, 128, 255)      # Bright Lavender
-    CURIOUS = (128, 200, 255)       # Bright Sky Blue
-    EAGER = (255, 159, 64)          # Bright Pumpkin Orange
-    DISAPPOINTED = (160, 160, 192)  # Bright Slate Gray
-    DISAPPROVING = (192, 128, 64)   # Bright Warm Brown
-    EMBARRASSED = (255, 128, 160)   # Bright Blush Pink
-    EXCITED = (255, 96, 64)         # Bright Flame Red
-    FEARFUL = (160, 80, 40)         # Bright Chestnut Brown
-    GRATEFUL = (128, 255, 192)      # Bright Mint Green
-    JOYFUL = (255, 255, 64)         # Bright Sunshine Yellow
-    LOVING = (255, 128, 192)        # Bright Rose Pink
-    MOURNFUL = (96, 128, 160)       # Bright Steel Blue
-    NEUTRAL = (192, 192, 192)       # Bright Silver Gray
-    OPTIMISTIC = (255, 223, 64)     # Bright Goldenrod
-    RELIEVED = (128, 255, 255)      # Bright Aqua Blue
-    REMORSEFUL = (192, 96, 64)      # Bright Russet
-    REPULSED = (160, 255, 160)      # Bright Soft Green
-    SAD = (96, 160, 255)            # Bright Cerulean Blue
-    WORRIED = (160, 160, 160)       # Bright Neutral Gray
-    SURPRISED = (255, 192, 64)      # Bright Marigold
-    SYMPATHETIC = (255, 128, 128)   # Bright Coral
+    ADMIRING = (255, 128, 255)      # Bright Violet - warm admiration
+    AMUSED = (255, 215, 64)         # Bright Golden Yellow - playful energy
+    ANGRY = (255, 64, 64)           # Bright Red - intense anger
+    ANNOYED = (255, 128, 80)        # Bright Orange-Red - irritation
+    APPROVING = (128, 255, 128)     # Bright Lime Green - positive approval
+    AWARE = (255, 255, 128)         # Bright Lemon Yellow - clarity
+    CONFIDENT = (64, 128, 255)      # Bright Royal Blue - strong confidence
+    CONFUSED = (192, 128, 255)      # Bright Lavender - uncertainty
+    CURIOUS = (128, 200, 255)       # Bright Sky Blue - inquisitive
+    EAGER = (255, 159, 64)          # Bright Pumpkin Orange - enthusiastic
+    DISAPPOINTED = (160, 160, 192)   # Bright Slate Gray - letdown
+    DISAPPROVING = (192, 128, 64)    # Bright Warm Brown - negative judgment
+    EMBARRASSED = (255, 128, 160)    # Bright Blush Pink - flustered
+    EXCITED = (255, 96, 64)         # Bright Flame Red - high energy
+    FEARFUL = (160, 80, 40)         # Bright Chestnut Brown - fear
+    GRATEFUL = (128, 255, 192)      # Bright Mint Green - thankful
+    JOYFUL = (255, 255, 64)         # Bright Sunshine Yellow - pure joy
+    LOVING = (255, 128, 192)        # Bright Rose Pink - affection
+    MOURNFUL = (96, 128, 160)       # Bright Steel Blue - deep sadness
+    NEUTRAL = (192, 192, 192)       # Bright Silver Gray - balanced
+    OPTIMISTIC = (255, 223, 64)     # Bright Goldenrod - hopeful
+    RELIEVED = (128, 255, 255)      # Bright Aqua Blue - tension release
+    REMORSEFUL = (192, 96, 64)      # Bright Russet - regret
+    REPULSED = (160, 255, 160)      # Bright Soft Green - disgust
+    SAD = (96, 160, 255)            # Bright Cerulean Blue - melancholy
+    WORRIED = (160, 160, 160)       # Bright Neutral Gray - concern
+    SURPRISED = (255, 192, 64)      # Bright Marigold - unexpected
+    SYMPATHETIC = (255, 128, 128)   # Bright Coral - compassion
+
 
 # Function to print colored gradient from top to bottom
 def print_gradient(text, color, tone):
@@ -228,165 +289,3 @@ while j < len(responseList):
     # ^^^^^^^^^ ADD MORE ^^^^^^^^^
 
     j = j + 1  # iterating
-
-
-
-###############################################################################################################################################################
-# import requests
-# from pprint import pprint
-
-# class RGBStyle:
-#     ADMIRING = '\033[35m'       # Soft Violet
-#     AMUSED = '\033[93m'         # Golden Yellow
-#     ANGRY = '\033[91m'          # Bright Red
-#     ANNOYED = '\033[91m'        # Muted Red-Orange
-#     APPROVING = '\033[32m'      # Fresh Green
-#     AWARE = '\033[93m'          # Golden Yellow
-#     CONFIDENT = '\033[94m'      # Deep Blue
-#     CONFUSED = '\033[95m'       # Lavender Purple
-#     CURIOUS = '\033[96m'        # Sky Blue
-#     EAGER = '\033[33m'          # Vivid Orange
-#     DISAPPOINTED = '\033[90m'   # Muted Gray-Blue
-#     DISAPPROVING = '\033[33m'   # Earthy Brown
-#     EMBARRASSED = '\033[95m'    # Pale Pink
-#     EXCITED = '\033[91m'        # Tomato Red
-#     FEARFUL = '\033[90m'        # Dark Brown
-#     GRATEFUL = '\033[92m'       # Soft Green
-#     JOYFUL = '\033[93m'         # Bright Yellow
-#     LOVING = '\033[95m'         # Hot Pink
-#     MOURNFUL = '\033[90m'       # Dark Slate Gray
-#     NEUTRAL = '\033[37m'        # Neutral Gray
-#     OPTIMISTIC = '\033[93m'     # Golden Yellow
-#     RELIEVED = '\033[96m'       # Soft Sky Blue
-#     REMORSEFUL = '\033[33m'     # Saddle Brown
-#     REPULSED = '\033[32m'       # Olive Green
-#     SAD = '\033[94m'            # Steel Blue
-#     WORRIED = '\033[90m'        # Muted Gray
-#     SURPRISED = '\033[33m'      # Bright Orange
-#     SYMPATHETIC = '\033[91m'    # Rosy Red
-
-#     RESET = '\033[0m'
-    
-    
-# # reading the email from specified file
-# # we can make this a command line argument later
-# with open('example_added.txt', 'r', encoding='utf-8') as file:
-#     content = file.read()
-#     # print(content) # for Debugging
-
-# # delimiting the list
-# # splitting the contents every newline character
-# contentList = content.split("\n")
-
-# # pprint(contentList) # for Debugging
-
-# responseList = []
-# i = 0
-
-# # iterating through the list of content
-# # the code inside the while loop is pretty much straight from the sapling website
-# while i < len(contentList):
-#     response = requests.post(
-#         "https://api.sapling.ai/api/v1/tone",
-#         json={
-#             "key": "XO4JD953SJMKVQM8BOSVVSJCAGUJ5BGX",
-#             "text": contentList[i]  # sending the data of the list
-#         }
-#     )
-#     # print(response.json()) # for Debugging
-#     responseList.append(response)  # appending the response to the response list
-#     # pprint(responseList[i].json())
-#     i = i + 1  # iterating
-
-# # pprint(responseList.json()) # for Debugging
-# # print(RGBStyle.BLUE + "Hello, World!" + "\033[0m") # for Debugging
-# j = 0
-
-# # iterating through the response list
-# while j < len(responseList):
-#     val = responseList[j].json()
-#     # pprint(val['results'][0][0][1])
-
-#     # checking the returned emotion/ tone value
-#     # and changing output color appropriately
-#     if val['results'][0][0][1] == "angry":
-#         print(RGBStyle.ANGRY + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "admiring":
-#         print(RGBStyle.ADMIRING + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "curious":
-#         print(RGBStyle.CURIOUS + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "confused":
-#         print(RGBStyle.CONFUSED + str(contentList[j]) + "\033[0m")
-
-#     # TEMP BLOW to add more 
-#     elif val['results'][0][0][1] == "joyful":
-#         print(RGBStyle.JOYFUL + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "loving":
-#         print(RGBStyle.LOVING + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "excited":
-#         print(RGBStyle.EXCITED + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "fearful":
-#         print(RGBStyle.FEARFUL + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "worried":
-#         print(RGBStyle.WORRIED + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "embarrassed":
-#         print(RGBStyle.EMBARRASSED + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "sympathetic":
-#         print(RGBStyle.SYMPATHETIC + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "annoyed":
-#         print(RGBStyle.ANNOYED + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "approving":
-#         print(RGBStyle.APPROVING + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "aware":
-#         print(RGBStyle.AWARE + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "confident":
-#         print(RGBStyle.CONFIDENT + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "eager":
-#         print(RGBStyle.EAGER + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "disappointed":
-#         print(RGBStyle.DISAPPOINTED + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "disapproving":
-#         print(RGBStyle.DISAPPROVING + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "grateful":
-#         print(RGBStyle.GRATEFUL + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "mournful":
-#         print(RGBStyle.MOURNFUL + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "optimistic":
-#         print(RGBStyle.OPTIMISTIC + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "relieved":
-#         print(RGBStyle.RELIEVED + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "remorseful":
-#         print(RGBStyle.REMORSEFUL)
-#     elif val['results'][0][0][1] == "repulsed":
-#         print(RGBStyle.REPULSED + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "sad":
-#         print(RGBStyle.SAD + str(contentList[j]) + "\033[0m")
-
-#     elif val['results'][0][0][1] == "surprised":
-#         print(RGBStyle.SURPRISED + RGBStyle.RED + str(contentList[j]) + "\033[0m")
-
-#     # ^^^^^^^^^ ADD MORE ^^^^^^^^^
-
-#     j = j + 1  # iterating
