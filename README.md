@@ -2,12 +2,21 @@
 Final Project for CSC 4240
 
 
-# tone.py Example output from example.txt
+![alt text](https://github.com/Caleb-Neal-Smith/AI_Final_Project/blob/main/Menu.png?raw=true)
 
-${\color{red}Im \space going \space to \space punch \space you, \space I \space am \space so \space mad \space at \space you!! \space \space (this \space would \space be \space RED)}$
 
-${\color{blue}I \space think \space you \space are \space awesome \space and \space really \space cool. \space You \space are \space one \space of \space the \space greatest \space people \space I \space have \space ever \space met. \space \space (this \space would \space be \space BLUE)}$
 
-${\color{cyan}What \space do \space you \space think \space about \space TacoBell? \space \space (this \space would \space be \space CYAN)}$
+This project takes your email and enhances it with the following features:
 
-${\color{green}I \space have \space no \space idea \space what's \space going \space on. \space \space (this \space would \space be \space GREEN)}$
+1. **Text Coloring**: Colors the text for visual emphasis.
+2. **Emoji Addition**: Adds an emoji to the end of your sentences.
+3. **Combined Enhancements**: Applies both text coloring and emoji addition simultaneously.
+
+### Bonus Feature:
+- **Synonym Suggestions**: Provides synonyms for words to enrich your vocabulary.
+
+## How to Use
+1. Input your email text.
+2. Select the desired enhancement option.
+3. Enjoy your enhanced email!
+
