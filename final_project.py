@@ -495,7 +495,48 @@ def getSynonyms():
         except Exception as e:
             print('Error: ', e)
 
+# Function to print colored gradient from left to right
+def print_gradient_left_to_right(text, color_start, color_end):
+    # ANSI escape codes for colors
+    def rgb_to_ansi(r, g, b):
+        return f"\033[38;2;{r};{g};{b}m"
+    
+    gradient_steps = len(text)
+    
+    # Extract RGB components for start and end colors
+    r_start, g_start, b_start = color_start
+    r_end, g_end, b_end = color_end
+    
+    for i, char in enumerate(text):
+        # Calculate intermediate colors for the gradient from left to right
+        r = int(r_start + (r_end - r_start) * i / gradient_steps)
+        g = int(g_start + (g_end - g_start) * i / gradient_steps)
+        b = int(b_start + (b_end - b_start) * i / gradient_steps)
+        
+        # Apply the color to the character
+        print(f"{rgb_to_ansi(r, g, b)}{char}", end="")
+    
+    print("\033[0m")  # Reset to default color
 
+
+# Your ASCII art
+ascii_art = """
+   ███████╗███╗   ███╗ █████╗ ██╗██╗         ████████╗ ██████╗ ███╗   ██╗███████╗
+   ██╔════╝████╗ ████║██╔══██╗██║██║         ╚══██╔══╝██╔═══██╗████╗  ██║██╔════╝
+   █████╗  ██╔████╔██║███████║██║██║            ██║   ██║   ██║██╔██╗ ██║█████╗
+   ██╔══╝  ██║╚██╔╝██║██╔══██║██║██║            ██║   ██║   ██║██║╚██╗██║██╔══╝
+   ██╔══╝  ██║╚██╔╝██║██╔══██║██║██║            ██║   ██║   ██║██║╚██╗██║██╔══╝
+   ███████╗██║ ╚═╝ ██║██║  ██║██║███████╗       ██║   ╚██████╔╝██║ ╚████║███████╗
+   ╚══════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚══════╝       ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+"""
+
+# Define start and end colors for the gradient (yellow to red)
+color_start = (255, 255, 0)  # Yellow RGB
+color_end = (255, 0, 0)      # Red RGB
+
+# Print the gradient from left to right for each line of the ASCII art
+for line in ascii_art.splitlines():
+    print_gradient_left_to_right(line, color_start, color_end)
 
 with open('example_added.txt', 'r', encoding='utf-8') as file:
     content = file.read()
@@ -509,8 +550,8 @@ emotions = response.json()
 option = 0
 # start if for menu here
 while option != '5':
-    print("PLEASE SELECT ONE OF OUR MENU OPTIONS")
-    option = input("1. Emojify your text\n2. Colorify your text\n3. Do BOTH\n4. Get a Synonym for a word\n5. Leave.\n")
+    print("  PLEASE SELECT ONE OF OUR MENU OPTIONS")
+    option = input("  ╔ 1. Emojify your text\n  ║ 2. Colorify your text\n  ║ 3. Do BOTH\n  ║ 4. Get a Synonym for a word\n  ╚ 5. Leave.\n")
     if option == '1': # emojify your code
         # text = input("Type your text: ") # Don't need this
         print(getEmoji(emotions))
