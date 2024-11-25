@@ -3,38 +3,80 @@ from pprint import pprint
 key = "QD3LVJOE28KMD9E6C820ET3GAUDUOCSC"
 
 # This class sets the variable for each color
-class style:
-    BLACK = '\033[30m'
-    RED = '\033[31m'
-    GREEN = '\033[32m'
-    YELLOW = '\033[93m'
-    BLUE = '\033[94m'
-    MAGENTA = '\033[35m'
-    CYAN = '\033[36m'
-    LIGHTCYAN = '\033[96m'
-    WHITE = '\033[37m'
-    ORANGE = '\033[33m'
-    DARKPURPLE = '\033[35m'
-    LIGHTGREY = '\033[37m'
-    DARKGREY = '\033[90m'
-    PINK = '\033[95m'
-    LIGHTRED = '\033[91m'
-    DARKYELLOW = '\033[33m'
-    DARKRED = '\033[31m'
-    DARKGREEN = '\033[32m'
-    DARKBLUE = '\033[34m'
-    RED_BG = '\033[41m'
-    GREEN_BG = '\033[42m'
-    ORANGE_BG = '\033[43m'
-    BLUE_BG = '\033[44m'
-    YELLOW_BG = '\033[103m'
-    VIOLET_BG = '\033[45m'
-    LIGHTVIOLET_BG = '\033[105m'
-    CYAN_BG = '\033[46m'
-    LIGHTGREY_BG = '\033[47m'
-    DARKGREY_BG = '\033[100m'
-    UNDERLINE = '\033[4m'
-    RESET = '\033[0m'
+# class style:
+#     BLACK = '\033[30m'
+#     RED = '\033[31m'
+#     GREEN = '\033[32m'
+#     YELLOW = '\033[93m'
+#     BLUE = '\033[94m'
+#     MAGENTA = '\033[35m'
+#     CYAN = '\033[36m'
+#     LIGHTCYAN = '\033[96m'
+#     WHITE = '\033[37m'
+#     ORANGE = '\033[33m'
+#     DARKPURPLE = '\033[35m'
+#     LIGHTGREY = '\033[37m'
+#     DARKGREY = '\033[90m'
+#     PINK = '\033[95m'
+#     LIGHTRED = '\033[91m'
+#     DARKYELLOW = '\033[33m'
+#     DARKRED = '\033[31m'
+#     DARKGREEN = '\033[32m'
+#     DARKBLUE = '\033[34m'
+#     RED_BG = '\033[41m'
+#     GREEN_BG = '\033[42m'
+#     ORANGE_BG = '\033[43m'
+#     BLUE_BG = '\033[44m'
+#     YELLOW_BG = '\033[103m'
+#     VIOLET_BG = '\033[45m'
+#     LIGHTVIOLET_BG = '\033[105m'
+#     CYAN_BG = '\033[46m'
+#     LIGHTGREY_BG = '\033[47m'
+#     DARKGREY_BG = '\033[100m'
+#     UNDERLINE = '\033[4m'
+#     RESET = '\033[0m'
+
+class RGBStyle:
+    ADMIRING = (255, 128, 255)      # Bright Violet - warm admiration
+    AMUSED = (255, 215, 64)         # Bright Golden Yellow - playful energy
+    ANGRY = (255, 64, 64)           # Bright Red - intense anger
+    ANNOYED = (255, 128, 80)        # Bright Orange-Red - irritation
+    APPROVING = (128, 255, 128)     # Bright Lime Green - positive approval
+    AWARE = (255, 255, 128)         # Bright Lemon Yellow - clarity
+    CONFIDENT = (64, 128, 255)      # Bright Royal Blue - strong confidence
+    CONFUSED = (192, 128, 255)      # Bright Lavender - uncertainty
+    CURIOUS = (128, 200, 255)       # Bright Sky Blue - inquisitive
+    EAGER = (255, 159, 64)          # Bright Pumpkin Orange - enthusiastic
+    DISAPPOINTED = (160, 160, 192)   # Bright Slate Gray - letdown
+    DISAPPROVING = (192, 128, 64)    # Bright Warm Brown - negative judgment
+    EMBARRASSED = (255, 128, 160)    # Bright Blush Pink - flustered
+    EXCITED = (255, 96, 64)         # Bright Flame Red - high energy
+    FEARFUL = (160, 80, 40)         # Bright Chestnut Brown - fear
+    GRATEFUL = (128, 255, 192)      # Bright Mint Green - thankful
+    JOYFUL = (255, 255, 64)         # Bright Sunshine Yellow - pure joy
+    LOVING = (255, 128, 192)        # Bright Rose Pink - affection
+    MOURNFUL = (96, 128, 160)       # Bright Steel Blue - deep sadness
+    NEUTRAL = (192, 192, 192)       # Bright Silver Gray - balanced
+    OPTIMISTIC = (255, 223, 64)     # Bright Goldenrod - hopeful
+    RELIEVED = (128, 255, 255)      # Bright Aqua Blue - tension release
+    REMORSEFUL = (192, 96, 64)      # Bright Russet - regret
+    REPULSED = (160, 255, 160)      # Bright Soft Green - disgust
+    SAD = (96, 160, 255)            # Bright Cerulean Blue - melancholy
+    WORRIED = (160, 160, 160)       # Bright Neutral Gray - concern
+    SURPRISED = (255, 192, 64)      # Bright Marigold - unexpected
+    SYMPATHETIC = (255, 128, 128)   # Bright Coral - compassion
+
+# Function to print colored gradient from top to bottom
+def print_gradient(text, color, tone):
+    # ANSI escape codes for colors
+    def rgb_to_ansi(r, g, b):
+        return f"\033[38;2;{r};{g};{b}m"
+    
+    # Calculate the intermediate color based on the vertical position
+    r, g, b = color
+    
+    # Apply the color to the entire line
+    print(f"{rgb_to_ansi(r, g, b)}{text}\033[0m" + " " + str(color) + " " + tone + "\033[0m")
 
 
 # reading the email from specified file
@@ -76,7 +118,7 @@ def colorifyText(emotions):
     # splitting the contents every newline character
     # contentList = content.split(".") #Use period or newline here? # Don't need this (?)
 
-    # pprint(contentList) # for Debugging
+    # pprint(emotions) # for Debugging
 
     # responseList = []
     # i = 0
@@ -129,142 +171,227 @@ def colorifyText(emotions):
     # checking the returned emotion/ tone value
     # and changing output color appropriately
     for k in range (0, len(emotions['sents'])):
+
+    #     if emotions['results'][k][0][1] == "angry":
+    #         # print(style.RED + str(contentList[j]) + "\033[0m") # May not need this
+    #         sentenceTogether = style.RED + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "admiring":
+    #          # print(style.DARKYELLOW + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.DARKYELLOW + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "curious":
+    #         # print(style.CYAN + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.CYAN + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "confused":
+    #         # print(style.GREEN + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.GREEN + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     # TEMP BLOW to add more # Take out this comment?
+    #     elif emotions['results'][k][0][1] == "joyful":
+    #         # print(style.YELLOW + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.YELLOW + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "loving":
+    #         # print(style.PINK + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.PINK + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "excited":
+    #         # print(style.ORANGE + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.ORANGE + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "fearful":
+    #         # print(style.DARKPURPLE + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.DARKPURPLE + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "worried":
+    #         # print(style.DARKGREY + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "embarrassed":
+    #         # print(style.MAGENTA + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "sympathetic":
+    #         # print(style.LIGHTRED + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.LIGHTRED + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "annoyed":
+    #         # print(style.DARKRED + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.DARKRED + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "approving":
+    #         # print(style.MAGENTA + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "aware":
+    #         # print(style.LIGHTGREY_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.LIGHTGREY_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "confident":
+    #         # print(style.LIGHTVIOLET_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "eager":
+    #         # print(style.ORANGE_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.ORANGE_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "disappointed":
+    #         # print(style.LIGHTGREY + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.LIGHTGREY + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "disapproving":
+    #         # print(style.DARKGREY + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "grateful":
+    #         # print(style.YELLOW_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.YELLOW_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "mournful":
+    #         # print(style.DARKGREY_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.DARKGREY_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "optimistic":
+    #         # print(style.GREEN_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.GREEN_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "relieved":
+    #         # print(style.CYAN_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.CYAN_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "remorseful":
+    #         # print(style.BLUE_BG + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.BLUE_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "repulsed":
+    #         # print(style.DARKGREEN + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.DARKGREEN + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "sad":
+    #         # print(style.BLUE + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.BLUE + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     elif emotions['results'][k][0][1] == "surprised":
+    #         # print(style.LIGHTVIOLET_BG + style.RED + str(contentList[j]) + "\033[0m")
+    #         sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m"
+    #         finalSentence = finalSentence + ' ' + sentenceTogether
+
+    #     # ^^^^^^^^^ ADD MORE ^^^^^^^^^ # Should we add the two missing tones?
+
+    #     # j = j + 1  # iterating # may not need this
+        
+        # pprint(emotions)
+
         if emotions['results'][k][0][1] == "angry":
-            # print(style.RED + str(contentList[j]) + "\033[0m") # May not need this
-            sentenceTogether = style.RED + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.ANGRY, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "admiring":
-             # print(style.DARKYELLOW + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKYELLOW + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.ADMIRING, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "curious":
-            # print(style.CYAN + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.CYAN + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.CURIOUS, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "confused":
-            # print(style.GREEN + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.GREEN + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.CONFUSED, emotions['results'][k][0][1])
 
-        # TEMP BLOW to add more # Take out this comment?
+        # TEMP BLOW to add more 
         elif emotions['results'][k][0][1] == "joyful":
-            # print(style.YELLOW + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.YELLOW + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.JOYFUL, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "loving":
-            # print(style.PINK + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.PINK + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.LOVING, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "excited":
-            # print(style.ORANGE + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.ORANGE + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.EXCITED, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "fearful":
-            # print(style.DARKPURPLE + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKPURPLE + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.FEARFUL, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "worried":
-            # print(style.DARKGREY + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.WORRIED, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "embarrassed":
-            # print(style.MAGENTA + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.EMBARRASSED, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "sympathetic":
-            # print(style.LIGHTRED + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTRED + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.SYMPATHETIC, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "annoyed":
-            # print(style.DARKRED + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKRED + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.ANNOYED, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "approving":
-            # print(style.MAGENTA + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.MAGENTA + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.APPROVING, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "aware":
-            # print(style.LIGHTGREY_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTGREY_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.AWARE, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "confident":
-            # print(style.LIGHTVIOLET_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.CONFIDENT, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "eager":
-            # print(style.ORANGE_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.ORANGE_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.EAGER, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "disappointed":
-            # print(style.LIGHTGREY + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTGREY + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.DISAPPOINTED, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "disapproving":
-            # print(style.DARKGREY + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREY + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.DISAPPROVING, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "grateful":
-            # print(style.YELLOW_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.YELLOW_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.GRATEFUL, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "mournful":
-            # print(style.DARKGREY_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREY_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.MOURNFUL, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "optimistic":
-            # print(style.GREEN_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.GREEN_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.OPTIMISTIC, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "relieved":
-            # print(style.CYAN_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.CYAN_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.RELIEVED, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "remorseful":
-            # print(style.BLUE_BG + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.BLUE_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
-
+            print_gradient(str(emotions['sents'][k]), RGBStyle.REMORSEFUL, emotions['results'][k][0][1])
         elif emotions['results'][k][0][1] == "repulsed":
-            # print(style.DARKGREEN + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.DARKGREEN + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.REPULSED, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "sad":
-            # print(style.BLUE + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.BLUE + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.SAD, emotions['results'][k][0][1])
 
         elif emotions['results'][k][0][1] == "surprised":
-            # print(style.LIGHTVIOLET_BG + style.RED + str(contentList[j]) + "\033[0m")
-            sentenceTogether = style.LIGHTVIOLET_BG + str(emotions['sents'][k]) + "\033[0m"
-            finalSentence = finalSentence + ' ' + sentenceTogether
+            print_gradient(str(emotions['sents'][k]), RGBStyle.SURPRISED, emotions['results'][k][0][1])
 
-        # ^^^^^^^^^ ADD MORE ^^^^^^^^^ # Should we add the two missing tones?
+        # ^^^^^^^^^ ADD MORE ^^^^^^^^^
 
-        # j = j + 1  # iterating # may not need this
+        j = j + 1  # iterating
 
-    return finalSentence
+    # return finalSentence
 
 def toneColorEmoji(emotions):
     # reading the email from specified file
@@ -550,14 +677,14 @@ emotions = response.json()
 option = 0
 # start if for menu here
 while option != '5':
-    print("  PLEASE SELECT ONE OF OUR MENU OPTIONS")
+    print("  \nPLEASE SELECT ONE OF OUR MENU OPTIONS")
     option = input("  ╔ 1. Emojify your text\n  ║ 2. Colorify your text\n  ║ 3. Do BOTH\n  ║ 4. Get a Synonym for a word\n  ╚ 5. Leave.\n")
     if option == '1': # emojify your code
         # text = input("Type your text: ") # Don't need this
         print(getEmoji(emotions))
 
     if option == '2':
-        print(colorifyText(emotions))
+        colorifyText(emotions)
 
     if option == '3':
         # text = input("Type your text: ") # Don't need this
