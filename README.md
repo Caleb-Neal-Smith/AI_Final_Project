@@ -16,7 +16,11 @@ This project takes your email and enhances it with the following features:
 - **Synonym Suggestions**: Provides synonyms for words to enrich your vocabulary.
 
 ## How to Use
-1. Input your email text.
-2. Select the desired enhancement option.
-3. Enjoy your enhanced email!
+1. Download final_project.py and example_added.txt into the same directory.
+2. Copy your email into the example_added.txt file.
+3. Open your command prompt and cd into the directory which holds both of them.
+4. Input final_project.py into the command prompt and the app will open
+5. Choose which option you'd like to do to the email by inputting 1-3.
+6. If you would like synonyms enter 4 and then input the word you desire synonyms for.
+7. Enjoy your enhanced email!
 
