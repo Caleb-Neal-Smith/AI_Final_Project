@@ -76,7 +76,7 @@ def print_gradient(text, color, tone):
     r, g, b = color
     
     # Apply the color to the entire line
-    print(f"{rgb_to_ansi(r, g, b)}{text}\033[0m" + " " + str(color) + " " + tone + "\033[0m")
+    print(f"{rgb_to_ansi(r, g, b)}{text}\033[0m")
 
 
 # reading the email from specified file
