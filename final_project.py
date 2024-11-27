@@ -207,6 +207,16 @@ def colorifyText(emotions):
             # print(RGBStyle.LIGHTVIOLET_BG + RGBStyle.RED + str(contentList[j]) + "\033[0m")
             sentenceTogether = color_to_rgb(RGBStyle.SURPRISED) + str(emotions['sents'][k]) + "\033[0m"
             finalSentence = finalSentence + ' ' + sentenceTogether
+        
+        elif emotions['results'][k][0][1] == "neutral":
+            # print(RGBStyle.LIGHTVIOLET_BG + RGBStyle.RED + str(contentList[j]) + "\033[0m")
+            sentenceTogether = color_to_rgb(RGBStyle.NEUTRAL) + str(emotions['sents'][k]) + "\033[0m"
+            finalSentence = finalSentence + ' ' + sentenceTogether
+        
+        elif emotions['results'][k][0][1] == "amused":
+            # print(RGBStyle.LIGHTVIOLET_BG + RGBStyle.RED + str(contentList[j]) + "\033[0m")
+            sentenceTogether = color_to_rgb(RGBStyle.AMUSED) + str(emotions['sents'][k]) + "\033[0m"
+            finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "amused":
             # print(RGBStyle.LIGHTVIOLET_BG + RGBStyle.RED + str(contentList[j]) + "\033[0m")
@@ -360,6 +370,16 @@ def toneColorEmoji(emotions):
         elif emotions['results'][k][0][1] == "surprised":
             # print(RGBStyle.LIGHTVIOLET_BG + RGBStyle.RED + str(contentList[j]) + "\033[0m")
             sentenceTogether = color_to_rgb(RGBStyle.SURPRISED) + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            finalSentence = finalSentence + ' ' + sentenceTogether
+        
+        elif emotions['results'][k][0][1] == "neutral":
+            # print(RGBStyle.LIGHTVIOLET_BG + RGBStyle.RED + str(contentList[j]) + "\033[0m")
+            sentenceTogether = color_to_rgb(RGBStyle.NEUTRAL) + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
+            finalSentence = finalSentence + ' ' + sentenceTogether
+        
+        elif emotions['results'][k][0][1] == "amused":
+            # print(RGBStyle.LIGHTVIOLET_BG + RGBStyle.RED + str(contentList[j]) + "\033[0m")
+            sentenceTogether = color_to_rgb(RGBStyle.AMUSED) + str(emotions['sents'][k]) + "\033[0m" + emotions['results'][k][0][2]
             finalSentence = finalSentence + ' ' + sentenceTogether
 
         elif emotions['results'][k][0][1] == "amused":
