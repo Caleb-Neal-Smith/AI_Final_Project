@@ -1,6 +1,7 @@
 import requests
 from pprint import pprint
-key = "XO4JD953SJMKVQM8BOSVVSJCAGUJ5BGX"
+# key = "XO4JD953SJMKVQM8BOSVVSJCAGUJ5BGX" # Noah's key
+key = "QD3LVJOE28KMD9E6C820ET3GAUDUOCSC" # Caleb's key
 
 # This class sets the variable for each color
 # class style:
@@ -40,31 +41,60 @@ class RGBStyle:
     ADMIRING = (255, 128, 255)      # Bright Violet - warm admiration
     AMUSED = (255, 215, 64)         # Bright Golden Yellow - playful energy
     ANGRY = (255, 64, 64)           # Bright Red - intense anger
-    ANNOYED = (255, 128, 80)        # Bright Orange-Red - irritation
+    # ANNOYED = (255, 128, 80)        # Bright Orange-Red - irritation
+    ANNOYED = (205,28,24)           # Chili red - annoyance/irritation
+
     APPROVING = (128, 255, 128)     # Bright Lime Green - positive approval
     AWARE = (255, 255, 128)         # Bright Lemon Yellow - clarity
-    CONFIDENT = (64, 128, 255)      # Bright Royal Blue - strong confidence
-    CONFUSED = (192, 128, 255)      # Bright Lavender - uncertainty
+    # CONFIDENT = (64, 128, 255)      # Bright Royal Blue - strong confidence
+    CONFIDENT = (108,59,170)        # Royal Purple (Reference: https://www.figma.com/colors/royal-purple/) - confidence
+
+    # CONFUSED = (192, 128, 255)      # Bright Lavender - uncertainty
+    CONFUSED = (137,137,137)        # Gray (Reference: https://www.figma.com/colors/gray/) - confusion
+
     CURIOUS = (128, 200, 255)       # Bright Sky Blue - inquisitive
     EAGER = (255, 159, 64)          # Bright Pumpkin Orange - enthusiastic
     DISAPPOINTED = (160, 160, 192)   # Bright Slate Gray - letdown
-    DISAPPROVING = (192, 128, 64)    # Bright Warm Brown - negative judgment
-    EMBARRASSED = (255, 128, 160)    # Bright Blush Pink - flustered
-    EXCITED = (255, 96, 64)         # Bright Flame Red - high energy
-    FEARFUL = (160, 80, 40)         # Bright Chestnut Brown - fear
+    # DISAPPROVING = (192, 128, 64)    # Bright Warm Brown - negative judgment
+    DISAPPROVING = (203,203,203)    # Cool gray - disapproval
+
+    # EMBARRASSED = (255, 128, 160)    # Bright Blush Pink - flustered
+    EMBARRASSED = (255,29,141)      # Rose - embarrassed
+
+    # EXCITED = (255, 96, 64)         # Bright Flame Red - high energy
+    EXCITED = (255,75,51)          # Red-orange - excitement
+
+    # FEARFUL = (160, 80, 40)         # Bright Chestnut Brown - fear
+    FEARFUL = (109,129,150)        # Slate Gray - fear
+
     GRATEFUL = (128, 255, 192)      # Bright Mint Green - thankful
     JOYFUL = (255, 255, 64)         # Bright Sunshine Yellow - pure joy
     LOVING = (255, 128, 192)        # Bright Rose Pink - affection
-    MOURNFUL = (96, 128, 160)       # Bright Steel Blue - deep sadness
-    NEUTRAL = (192, 192, 192)       # Bright Silver Gray - balanced
-    OPTIMISTIC = (255, 223, 64)     # Bright Goldenrod - hopeful
+    # MOURNFUL = (96, 128, 160)       # Bright Steel Blue - deep sadness
+    MOURNFUL = (211,211,211)        # Light Gray - mourning
+
+    # NEUTRAL = (192, 192, 192)       # Bright Silver Gray - balanced
+    NEUTRAL = (242,240,239)               # Off-white - neutral
+
+    # OPTIMISTIC = (255, 223, 64)     # Bright Goldenrod - hopeful
+    OPTIMISTIC = (137,243,54)       # Lime green - optimistic (joy combined with interest)
+
     RELIEVED = (128, 255, 255)      # Bright Aqua Blue - tension release
-    REMORSEFUL = (192, 96, 64)      # Bright Russet - regret
-    REPULSED = (160, 255, 160)      # Bright Soft Green - disgust
-    SAD = (96, 160, 255)            # Bright Cerulean Blue - melancholy
+    # REMORSEFUL = (192, 96, 64)      # Bright Russet - regret
+    REMORSEFUL = (203,203,203)      # Cool gray - regret
+
+    # REPULSED = (160, 255, 160)      # Bright Soft Green - disgust
+    REPULSED = (137,81,41)          # Brown - disgust
+
+    # SAD = (96, 160, 255)            # Bright Cerulean Blue - melancholy
+    SAD = (217,217,217)             # Platinum - sadness
+
     WORRIED = (160, 160, 160)       # Bright Neutral Gray - concern
     SURPRISED = (255, 192, 64)      # Bright Marigold - unexpected
-    SYMPATHETIC = (255, 128, 128)   # Bright Coral - compassion
+
+    # SYMPATHETIC = (255, 128, 128)   # Bright Coral - compassion
+    SYMPATHETIC = (106,137,167)     # Blue-gray - sympathy/compassion
+    # change to a gray
 
 # Function to print colored gradient from top to bottom
 def print_gradient(text, color, tone):
@@ -119,7 +149,7 @@ def getEmoji(emotions):
     # sentenceTogether = '' # May not need this line
     for i in emotions['sents']:
         # finalSentence = finalSentence + sentenceTogether
-        sentenceTogether = i + emotions['results'][j][0][2]
+        sentenceTogether = i + emotions['results'][j][0][2] + "\n"
         finalSentence = finalSentence + ' ' + sentenceTogether
         j = j + 1
     return finalSentence
@@ -390,6 +420,7 @@ def colorifyText(emotions):
 
         elif emotions['results'][k][0][1] == "remorseful":
             print_gradient(str(emotions['sents'][k]), RGBStyle.REMORSEFUL, emotions['results'][k][0][1])
+
         elif emotions['results'][k][0][1] == "repulsed":
             print_gradient(str(emotions['sents'][k]), RGBStyle.REPULSED, emotions['results'][k][0][1])
 
@@ -398,6 +429,12 @@ def colorifyText(emotions):
 
         elif emotions['results'][k][0][1] == "surprised":
             print_gradient(str(emotions['sents'][k]), RGBStyle.SURPRISED, emotions['results'][k][0][1])
+
+        elif emotions['results'][k][0][1] == "amused":
+            print_gradient(str(emotions['sents'][k]), RGBStyle.AMUSED, emotions['results'][k][0][1])
+
+        elif emotions['results'][k][0][1] == "neutral":
+            print_gradient(str(emotions['sents'][k]), RGBStyle.NEUTRAL, emotions['results'][k][0][1])
 
         # ^^^^^^^^^ ADD MORE ^^^^^^^^^
 
@@ -668,6 +705,13 @@ def toneColorEmoji(emotions):
 
         elif emotions['results'][k][0][1] == "surprised":
             print_gradient_emoji(str(emotions['sents'][k]), RGBStyle.SURPRISED, emotions['results'][k][0][2])
+
+        elif emotions['results'][k][0][1] == "amused":
+            print_gradient_emoji(str(emotions['sents'][k]), RGBStyle.AMUSED, emotions['results'][k][0][2])
+
+        elif emotions['results'][k][0][1] == "neutral":
+            # pprint(emotions) # debugging
+            print_gradient_emoji(str(emotions['sents'][k]), RGBStyle.NEUTRAL, emotions['results'][k][0][2])
 
         # ^^^^^^^^^ ADD MORE ^^^^^^^^^
 
