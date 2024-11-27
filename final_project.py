@@ -72,6 +72,7 @@ def getEmoji(emotions):
     return finalSentence
 
 def colorifyText(emotions):
+    finalSentence = ''
     j = 0
     # checking the returned emotion/ tone value
     # and changing output color appropriately
